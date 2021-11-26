@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+
+  .stepper {
+    width: 900px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    flex-wrap: wrap;
+  }
+}

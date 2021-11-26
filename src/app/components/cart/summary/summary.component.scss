@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 400px;
+  background-color: var(--white);
+  color: var(--black);
+  padding: 1rem;
+
+  margin: 1rem 2rem;
+  .body {
+    .card {
+      display: flex;
+      margin: 1rem 0;
+      img {
+        max-width: 100px;
+        max-height: 100px;
+        margin-right: 1rem;
+      }
+      .details {
+        margin-left: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+    .promocode {
+      padding: 0.5rem;
+      display: flex;
+      input {
+        height: 1.4rem;
+        width: 15rem;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+      }
+    }
+    .pricing {
+      margin-top: 1rem;
+      h4 {
+        font-weight: bolder;
+      }
+    }
+    .flex {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 80vw;
+  }
+}

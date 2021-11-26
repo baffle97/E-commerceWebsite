@@ -1,0 +1,37 @@
+<!-- <div class="header">
+  <div>
+    <h3><a mat-raised-button href="">Shopping Cart</a></h3>
+  </div>
+  <div>
+    <h3><a mat-raised-button href="">Shipping Details</a></h3>
+  </div>
+  <div>
+    <h3><a mat-raised-button href="">Payment Details</a></h3>
+  </div>
+</div>
+<div class="body">
+  <div class="main">
+    <app-cart-details></app-cart-details>
+  </div>
+  <div class="summary">
+    <app-summary></app-summary>
+  </div>
+</div> -->
+<div class="container">
+  <div class="stepper">
+    <mat-horizontal-stepper>
+      <mat-step label="Cart Details">
+        <app-cart-details></app-cart-details>
+      </mat-step>
+      <mat-step label="Shipping Details">
+        <app-shipping-details></app-shipping-details>
+      </mat-step>
+      <mat-step label="Payment Details">
+        <app-payment></app-payment>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+  <div class="summary">
+    <app-summary></app-summary>
+  </div>
+</div>

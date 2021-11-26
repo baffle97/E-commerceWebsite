@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Product Details</h2>
+  <div class="card" *ngFor="let item of product">
+    <img [src]="item.image" alt="" />
+    <div class="details">
+      <h3>{{ item.title }}</h3>
+    </div>
+    <div class="quantity">
+      <input type="number" placeholder="Qty" value="1" />
+    </div>
+  </div>
+  <div class="btn">
+    <button mat-raised-button matStepperNext>Next</button>
+    <button mat-raised-button (click)="onEmptyCart()">Empty cart</button>
+  </div>
+</div>

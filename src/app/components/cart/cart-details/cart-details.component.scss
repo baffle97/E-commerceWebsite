@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+  .btn {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .card {
+    display: flex;
+    margin: 1rem;
+    align-items: center;
+    justify-content: space-around;
+    width: 700px;
+    img {
+      max-height: 150px;
+      max-width: 150px;
+    }
+    h3 {
+      max-width: 250px;
+    }
+    input {
+      width: 2.5rem;
+      padding: 0.5rem;
+      font-size: 0.8rem;
+    }
+  }
+}

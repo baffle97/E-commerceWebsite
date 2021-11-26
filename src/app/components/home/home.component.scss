@@ -1,0 +1,30 @@
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
+  margin-bottom: 3rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+  h1 {
+    margin-top: 0.4rem;
+  }
+  h1:after {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    padding-top: 20px;
+    border-bottom: 1px solid var(--white);
+  }
+  input {
+    width: 20rem;
+    height: 1.7rem;
+    border-radius: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  ::placeholder {
+    text-align: center;
+  }
+}

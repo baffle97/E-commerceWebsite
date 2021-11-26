@@ -1,0 +1,14 @@
+<div class="container">
+  <header>
+    <h1>What would you like to buy</h1>
+    <input
+      class="form-control"
+      type="text"
+      placeholder="&#xF002; Search"
+      style="font-family: var(--nav-text), FontAwesome"
+      (keyup)="onSearch($event)"
+    />
+  </header>
+
+  <app-products [productsList]="productsList"></app-products>
+</div>

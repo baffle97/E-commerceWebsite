@@ -1,0 +1,40 @@
+<div class="container">
+  <h3>Summary</h3>
+  <div class="body">
+    <div class="card" *ngFor="let item of product">
+      <img [src]="item.image" alt="" />
+      <div class="details">
+        <p>{{ item.title }}</p>
+        <p>${{ item.price }}</p>
+      </div>
+    </div>
+
+    <div class="promocode">
+      <input
+        type="text"
+        placeholder="Have a Promocode?"
+        (change)="onPromocode($event)"
+      />
+      <button mat-raised-button (click)="onApply()">Apply</button>
+    </div>
+    <div class="pricing">
+      <div class="subtotal flex">
+        <p>Subtotal</p>
+        <p>{{ total.toFixed(2) }}</p>
+      </div>
+      <div class="shipping-fee flex">
+        <p>Shipping</p>
+        <p>Free</p>
+      </div>
+      <div class="taxes flex">
+        <p>Taxes</p>
+        <p>{{ tax.toFixed(2) }}</p>
+      </div>
+      <hr />
+      <div class="grand-total flex">
+        <h4>Total</h4>
+        <h4>{{ grandTotal.toFixed(2) }}</h4>
+      </div>
+    </div>
+  </div>
+</div>

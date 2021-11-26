@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="product-head">
+    <div class="image">
+      <img [src]="productData.image" alt="" />
+    </div>
+    <div class="product-info">
+      <h1>{{ productData.title }}</h1>
+      <div class="review">
+        <span><i class="fa fa-star"></i></span>
+        <span>{{ productData.rating.rate }}</span>
+      </div>
+      <hr />
+      <div class="price">
+        <span
+          ><h2>${{ productData.price }}</h2></span
+        >
+        <span class="select">
+          <mat-form-field appearance="fill">
+            <mat-label>Select an option</mat-label>
+            <mat-select [(value)]="selected">
+              <mat-option>None</mat-option>
+              <mat-option value="option1">Large</mat-option>
+              <mat-option value="option2">Medium</mat-option>
+              <mat-option value="option3">Small</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </span>
+      </div>
+      <div class="info">
+        <p>
+          {{ productData.description }}
+        </p>
+        <button (click)="onAddCart(productData)" mat-raised-button>
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-description">
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et possimus,
+      eveniet optio numquam dicta odio hic dolores explicabo facere obcaecati,
+      molestias nihil exercitationem minima nisi iusto eum eos. Quidem assumenda
+      perspiciatis omnis modi et iure maiores ex similique doloremque eos
+      tempora accusamus officiis voluptatibus facilis earum soluta, culpa ipsum.
+      Dolor exercitationem vero eius atque, fugiat nulla error eos, ut incidunt
+      accusamus rem maiores, laboriosam unde odit ipsa beatae repellendus!
+      Doloribus nesciunt cumque, odio velit ut veritatis id fugiat alias facere
+      aliquam accusamus ducimus nam officiis a, deserunt sit. Dolorum qui
+      deleniti saepe velit nostrum eos ipsa ipsum fuga iure quod.
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae,
+      dignissimos vel. Iure animi quis magnam! Perferendis mollitia esse modi
+      corrupti asperiores, nam minus hic vitae tempore totam quos cum beatae!
+    </p>
+  </div>
+</div>

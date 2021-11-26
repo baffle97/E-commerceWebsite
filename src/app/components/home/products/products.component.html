@@ -1,0 +1,28 @@
+<div class="main">
+  <div class="heading">
+    <h1>Product Listing</h1>
+    <p>
+      We sell 100% authentic and genuine products and has premium qualtity. 15
+      days replacement/return/refund policy on all our products.
+    </p>
+  </div>
+
+  <div class="card-container">
+    <div class="card-wrapper" *ngFor="let item of productsList">
+      <mat-card class="card" (click)="openProduct(item)">
+        <div class="card-img">
+          <img [src]="item.image" alt="" />
+        </div>
+
+        <div class="card-info">
+          <p class="item-title">{{ item.title }}</p>
+          <p><i class="fa fa-star"></i>{{ item.rating.rate }}</p>
+          <p>${{ item.price }}</p>
+        </div>
+      </mat-card>
+      <div (click)="onAddCart(item)" class="button-overlay">
+        <button mat-raised-button>Add to cart</button>
+      </div>
+    </div>
+  </div>
+</div>
