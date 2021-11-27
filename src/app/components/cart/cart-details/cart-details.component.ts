@@ -25,4 +25,7 @@ export class CartDetailsComponent implements OnInit {
   onEmptyCart() {
     this.cartService.removeAll();
   }
+  onDelete(data: any) {
+    this.cartService.removeItem(data);
+  }
 }

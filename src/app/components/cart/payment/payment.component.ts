@@ -17,8 +17,7 @@ export class PaymentComponent implements OnInit {
   paymentGroup = new FormGroup({
     cardControl: new FormControl('', [
       Validators.required,
-      Validators.min(1000000000000000),
-      Validators.max(9999999999999999),
+      Validators.pattern('[0-9]{16}'),
     ]),
     monthControl: new FormControl('', [
       Validators.required,
