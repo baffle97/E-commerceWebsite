@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CartDataService } from 'src/app/services/cart-data.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { CartDataService } from 'src/app/services/cart-data.service';
 export class CartDetailsComponent implements OnInit {
   product: any = [];
   quantity: any;
+  // @Output() isCompleted = new EventEmitter<boolean>();
   constructor(private cartService: CartDataService) {}
 
   ngOnInit(): void {
@@ -18,8 +19,9 @@ export class CartDetailsComponent implements OnInit {
     });
   }
 
-  onQuantity($event) {}
-
+  // // onNext(value: boolean) {
+  // //   this.isCompleted.emit(value);
+  // }
   onEmptyCart() {
     this.cartService.removeAll();
   }

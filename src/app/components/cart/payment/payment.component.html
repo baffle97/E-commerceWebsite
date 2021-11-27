@@ -1,11 +1,67 @@
 <div class="container">
   <h2>Payment Details</h2>
   <div class="card-details">
-    <h3>Credit cart</h3>
-    <form action=""></form>
+    <h3>Credit/Debit Card</h3>
+    <form class="form" [formGroup]="paymentGroup" (ngSubmit)="onSuccess()">
+      <div class="card-no">
+        <mat-form-field>
+          <input
+            type="number"
+            matInput
+            placeholder="Enter your 16 digit card number"
+            formControlName="cardControl"
+          />
+        </mat-form-field>
+      </div>
+      <div class="dateValidation">
+        <mat-form-field>
+          <input
+            type="number"
+            matInput
+            placeholder="MM"
+            formControlName="monthControl"
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            type="number"
+            placeholder="YY"
+            matInput
+            formControlName="yearControl"
+          />
+        </mat-form-field>
+      </div>
+
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          placeholder="CVV"
+          formControlName="cvvControl"
+        />
+      </mat-form-field>
+
+      <div class="card-name">
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            placeholder="Enter your name"
+            formControlName="nameControl"
+          />
+        </mat-form-field>
+      </div>
+    </form>
 
     <div class="stepperBtn">
-      <button mat-raised-button (click)="onSuccess()">Done</button>
+      <button
+        mat-raised-button
+        (click)="onSuccess()"
+        *ngIf="paymentGroup.valid"
+        type="submit"
+      >
+        Done
+      </button>
       <button mat-raised-button matStepperPrevious>Back</button>
     </div>
   </div>

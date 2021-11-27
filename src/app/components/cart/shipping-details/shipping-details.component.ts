@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-shipping-details',
@@ -8,9 +8,22 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class ShippingDetailsComponent implements OnInit {
   constructor() {}
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
+  shippingForm = new FormGroup({
+    emailFormControl: new FormControl('', [
+      Validators.required,
+      Validators.email,
+    ]),
+    firstNameControl: new FormControl('', Validators.required),
+    lastNameControl: new FormControl('', Validators.required),
+    addressControl: new FormControl('', Validators.required),
+    cityControl: new FormControl('', Validators.required),
+    stateControl: new FormControl('', Validators.required),
+    postalControl: new FormControl('', Validators.required),
+  });
+
   ngOnInit(): void {}
+
+  onSubmit() {
+    console.log(this.shippingForm);
+  }
 }

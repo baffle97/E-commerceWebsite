@@ -1,14 +1,28 @@
 .container {
   display: flex;
   justify-content: space-between;
+  height: calc(100vh - 190px);
+  margin-bottom: 1rem;
 
   .stepper {
     width: 900px;
+    overflow: auto;
   }
 }
 
 @media (max-width: 1000px) {
   .container {
     flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    .stepper {
+      width: 90vw;
+      margin-bottom: 1rem;
+    }
+  }
+  .mat-horizontal-content-container {
+    overflow: auto;
   }
 }

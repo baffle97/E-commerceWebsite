@@ -1,11 +1,13 @@
 <div class="container">
   <h3>Summary</h3>
   <div class="body">
-    <div class="card" *ngFor="let item of product">
-      <img [src]="item.image" alt="" />
-      <div class="details">
-        <p>{{ item.title }}</p>
-        <p>${{ item.price }}</p>
+    <div class="card-container">
+      <div class="card" *ngFor="let item of product">
+        <img [src]="item.image" alt="" />
+        <div class="details">
+          <p>{{ item.title }}</p>
+          <p>${{ item.price }}</p>
+        </div>
       </div>
     </div>
 

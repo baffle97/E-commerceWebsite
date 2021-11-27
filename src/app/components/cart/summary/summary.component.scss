@@ -7,8 +7,12 @@
   color: var(--black);
   padding: 1rem;
 
-  margin: 1rem 2rem;
+  margin: 0rem 2rem 1rem 2rem;
   .body {
+    .card-container {
+      overflow: auto;
+      max-height: 150px;
+    }
     .card {
       display: flex;
       margin: 1rem 0;
@@ -50,6 +54,17 @@
 
 @media (max-width: 600px) {
   .container {
-    width: 80vw;
+    width: 70vw;
+    align-items: center;
+    .promocode {
+      flex-wrap: wrap;
+      input {
+        max-width: 10rem;
+        margin-right: 1rem;
+      }
+    }
+    .flex {
+      justify-content: space-evenly;
+    }
   }
 }

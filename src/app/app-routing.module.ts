@@ -9,6 +9,7 @@ import { ProductComponent } from './components/home/products/product/product.com
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
   { path: 'help', component: HelpComponent },
   { path: 'cart', component: CartComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
     component: ProductComponent,
   },
   { path: 'success', component: SuccessComponent },
+  { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];
 
 @NgModule({

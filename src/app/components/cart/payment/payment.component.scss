@@ -3,4 +3,45 @@
     display: flex;
     justify-content: space-around;
   }
+
+  .card-name {
+    mat-form-field {
+      width: 30vw;
+    }
+  }
+
+  .card-no {
+    mat-form-field {
+      width: 30vw;
+    }
+  }
+
+  mat-form-field {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    .form {
+      overflow: auto;
+      .card-name {
+        mat-form-field {
+          width: 70vw;
+        }
+      }
+
+      .card-no {
+        mat-form-field {
+          width: 70vw;
+        }
+      }
+    }
+  }
 }

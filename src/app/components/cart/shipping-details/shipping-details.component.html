@@ -1,54 +1,43 @@
-<!-- <div class="container">
-  <h2>Shipping Details</h2>
-  <form action="">
-    <div class="name">
-      <input matInput type="text" placeholder="First  Name" />
-      <input mat Input type="text" placeholder="Last Name" />
-    </div>
-    <div class="address">
-      <input matInput type="text" placeholder="Address" />
-      <input matInput type="text" placeholder="Address2" />
-    </div>
-    div.
-  </form>
-</div> -->
-
 <div class="container">
-  <form class="example-form">
+  <form class="example-form" [formGroup]="shippingForm" (ngSubmit)="onSubmit()">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Email</mat-label>
       <input
         type="email"
         matInput
-        [formControl]="emailFormControl"
-        placeholder="Ex. pat@example.com"
+        formControlName="emailFormControl"
+        placeholder="Ex. priyanshu@example.com"
       />
       <mat-error
         *ngIf="
-          emailFormControl.hasError('email') &&
-          !emailFormControl.hasError('required')
+          shippingForm['controls']['emailFormControl'].hasError('email') &&
+          !shippingForm['controls']['emailFormControl'].hasError('required')
         "
       >
         Please enter a valid email address
       </mat-error>
-      <mat-error *ngIf="emailFormControl.hasError('required')">
+      <mat-error
+        *ngIf="
+          shippingForm['controls']['emailFormControl'].hasError('required')
+        "
+      >
         Email is <strong>required</strong>
       </mat-error>
     </mat-form-field>
   </form>
-  <form class="example-form">
+  <form class="example-form" [formGroup]="shippingForm" (ngSubmit)="onSubmit()">
     <table class="example-full-width" cellspacing="0">
       <tr>
         <td>
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>First name</mat-label>
-            <input matInput />
+            <input matInput formControlName="firstNameControl" />
           </mat-form-field>
         </td>
         <td>
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label> Last Name</mat-label>
-            <input matInput />
+            <input matInput formControlName="lastNameControl" />
           </mat-form-field>
         </td>
       </tr>
@@ -57,7 +46,11 @@
     <p>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Address</mat-label>
-        <textarea matInput placeholder="Address"></textarea>
+        <textarea
+          matInput
+          placeholder="Address"
+          formControlName="addressControl"
+        ></textarea>
       </mat-form-field>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Address 2</mat-label>
@@ -70,13 +63,21 @@
         <td>
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>City</mat-label>
-            <input matInput placeholder="Ex. Bathinda" />
+            <input
+              matInput
+              placeholder="Ex. Bathinda"
+              formControlName="cityControl"
+            />
           </mat-form-field>
         </td>
         <td>
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>State</mat-label>
-            <input matInput placeholder="Ex. Punjab" />
+            <input
+              matInput
+              placeholder="Ex. Punjab"
+              formControlName="stateControl"
+            />
           </mat-form-field>
         </td>
         <td>
@@ -89,6 +90,7 @@
               maxlength="6"
               placeholder="Ex. 151001"
               value=""
+              formControlName="postalControl"
             />
             <mat-hint align="end">{{ postalCode.value.length }} / 6</mat-hint>
           </mat-form-field>
@@ -96,7 +98,9 @@
       </tr>
     </table>
     <div class="stepperBtn">
-      <button mat-raised-button matStepperNext>Next</button>
+      <button mat-raised-button matStepperNext *ngIf="shippingForm.valid">
+        Next
+      </button>
       <button mat-raised-button matStepperPrevious>Back</button>
     </div>
   </form>

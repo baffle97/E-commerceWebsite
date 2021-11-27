@@ -7,6 +7,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit {
+  // completed: boolean = false;
   constructor() {}
   ngOnInit() {}
+
+  // onCompleted($event) {
+  //   this.completed = $event;
+  // }
 }
