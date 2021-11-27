@@ -32,12 +32,28 @@
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>First name</mat-label>
             <input matInput formControlName="firstNameControl" />
+            <mat-error
+              *ngIf="
+                shippingForm['controls']['firstNameControl'].hasError(
+                  'required'
+                )
+              "
+            >
+              First Name is <strong>required</strong>
+            </mat-error>
           </mat-form-field>
         </td>
         <td>
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label> Last Name</mat-label>
             <input matInput formControlName="lastNameControl" />
+            <mat-error
+              *ngIf="
+                shippingForm['controls']['lastNameControl'].hasError('required')
+              "
+            >
+              Last Name is <strong>required</strong>
+            </mat-error>
           </mat-form-field>
         </td>
       </tr>
@@ -51,7 +67,15 @@
           placeholder="Address"
           formControlName="addressControl"
         ></textarea>
+        <mat-error
+          *ngIf="
+            shippingForm['controls']['addressControl'].hasError('required')
+          "
+        >
+          Address is <strong>required</strong>
+        </mat-error>
       </mat-form-field>
+
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Address 2</mat-label>
         <textarea matInput></textarea>
@@ -68,6 +92,13 @@
               placeholder="Ex. Bathinda"
               formControlName="cityControl"
             />
+            <mat-error
+              *ngIf="
+                shippingForm['controls']['cityControl'].hasError('required')
+              "
+            >
+              City Name is <strong>required</strong>
+            </mat-error>
           </mat-form-field>
         </td>
         <td>
@@ -78,6 +109,13 @@
               placeholder="Ex. Punjab"
               formControlName="stateControl"
             />
+            <mat-error
+              *ngIf="
+                shippingForm['controls']['stateControl'].hasError('required')
+              "
+            >
+              State Name is <strong>required</strong>
+            </mat-error>
           </mat-form-field>
         </td>
         <td>
@@ -93,6 +131,20 @@
               formControlName="postalControl"
             />
             <mat-hint align="end">{{ postalCode.value.length }} / 6</mat-hint>
+            <mat-error
+              *ngIf="
+                shippingForm['controls']['postalControl'].hasError('required')
+              "
+            >
+              Postal code is <strong>required</strong>
+            </mat-error>
+            <mat-error
+              *ngIf="
+                shippingForm['controls']['postalControl'].hasError('pattern') &&
+                !shippingForm['controls']['postalControl'].hasError('required')
+              "
+              >Please Enter valid Postal Code</mat-error
+            >
           </mat-form-field>
         </td>
       </tr>

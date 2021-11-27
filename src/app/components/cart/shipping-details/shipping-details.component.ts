@@ -18,7 +18,10 @@ export class ShippingDetailsComponent implements OnInit {
     addressControl: new FormControl('', Validators.required),
     cityControl: new FormControl('', Validators.required),
     stateControl: new FormControl('', Validators.required),
-    postalControl: new FormControl('', Validators.required),
+    postalControl: new FormControl('', [
+      Validators.required,
+      Validators.pattern('d{6}'),
+    ]),
   });
 
   ngOnInit(): void {}

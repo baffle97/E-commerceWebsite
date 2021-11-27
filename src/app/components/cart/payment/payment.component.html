@@ -10,7 +10,20 @@
             matInput
             placeholder="Enter your 16 digit card number"
             formControlName="cardControl"
+            #cardNumber
           />
+          <mat-hint align="end">{{ cardNumber.value.length }} / 16</mat-hint>
+          <mat-error
+            *ngIf="
+              paymentGroup['controls']['cardControl'].hasError('pattern') &&
+              !paymentGroup['controls']['cardControl'].hasError('required')
+            "
+            >Please Enter valid Card Number</mat-error
+          >
+          <mat-error
+            *ngIf="paymentGroup['controls']['cardControl'].hasError('required')"
+            >Card details are<strong>required</strong>
+          </mat-error>
         </mat-form-field>
       </div>
       <div class="dateValidation">
@@ -21,6 +34,20 @@
             placeholder="MM"
             formControlName="monthControl"
           />
+          <mat-error
+            *ngIf="
+              paymentGroup['controls']['monthControl'].hasError('required')
+            "
+            >Month is <strong>required</strong>
+          </mat-error>
+          <mat-error
+            *ngIf="
+              paymentGroup['controls']['monthControl'].hasError('min') ||
+              (paymentGroup['controls']['monthControl'].hasError('max') &&
+                !paymentGroup['controls']['monthControl'].hasError('required'))
+            "
+            >Enter a valid month</mat-error
+          >
         </mat-form-field>
         <mat-form-field>
           <input
@@ -29,6 +56,18 @@
             matInput
             formControlName="yearControl"
           />
+          <mat-error
+            *ngIf="paymentGroup['controls']['yearControl'].hasError('required')"
+            >Year is <strong>required</strong>
+          </mat-error>
+          <mat-error
+            *ngIf="
+              paymentGroup['controls']['yearControl'].hasError('min') ||
+              (paymentGroup['controls']['yearControl'].hasError('max') &&
+                !paymentGroup['controls']['yearControl'].hasError('required'))
+            "
+            >Enter a valid year
+          </mat-error>
         </mat-form-field>
       </div>
 
@@ -39,6 +78,17 @@
           placeholder="CVV"
           formControlName="cvvControl"
         />
+        <mat-error
+          *ngIf="
+            paymentGroup['controls']['cvvControl'].hasError('pattern') &&
+            !paymentGroup['controls']['cvvControl'].hasError('required')
+          "
+          >Please Enter valid CVV Number</mat-error
+        >
+        <mat-error
+          *ngIf="paymentGroup['controls']['cvvControl'].hasError('required')"
+          >CVV is <strong>required</strong>
+        </mat-error>
       </mat-form-field>
 
       <div class="card-name">
@@ -49,6 +99,10 @@
             placeholder="Enter your name"
             formControlName="nameControl"
           />
+          <mat-error
+            *ngIf="paymentGroup['controls']['nameControl'].hasError('required')"
+            >Name is <strong>required</strong>
+          </mat-error>
         </mat-form-field>
       </div>
     </form>
