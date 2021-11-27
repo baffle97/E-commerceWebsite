@@ -37,6 +37,7 @@ export class CartDataService {
         this.cartItemList.splice(index, 1);
       }
     });
+    this.productList.next(this.cartItemList);
   }
   removeAll() {
     this.cartItemList = [];
