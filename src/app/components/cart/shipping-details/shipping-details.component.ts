@@ -20,7 +20,7 @@ export class ShippingDetailsComponent implements OnInit {
     stateControl: new FormControl('', Validators.required),
     postalControl: new FormControl('', [
       Validators.required,
-      Validators.pattern('d{6}'),
+      Validators.pattern('^[1-9][0-9]{5}$'),
     ]),
   });
 
